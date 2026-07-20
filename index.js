@@ -11,6 +11,10 @@ app.use(express.static("public")); //express backend serves static files now
 const MONGO_URL = "mongodb://admin:qwerty@localhost:27017";
 const client = new MongoClient(MONGO_URL);
 
+app.get("/", async (req, res)=>{
+    res.json({msg:"Hello from localhost "})
+})
+
 // get all users
 
 app.get("/getUsers", async (_req, res) => {
